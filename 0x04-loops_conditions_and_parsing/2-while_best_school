@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # displays Best School 10 times.
-
 COUNT=0
 while [ $COUNT -lt 10 ]
 do
