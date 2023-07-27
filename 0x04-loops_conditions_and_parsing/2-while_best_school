@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# displays Best School 10 times.
-conter=0
-while [ $conter -lt 10 ]
+# This script "Best School" 10 times
+v=1
+while [ $v -le 10 ]
 do
-    echo "Best School"
-    let conter=conter+1
+	echo "Best School"
+	v=$(( v + 1 ))
 done
