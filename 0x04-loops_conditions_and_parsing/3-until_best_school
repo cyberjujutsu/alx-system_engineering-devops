@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# "Best School" 10 times
-v=1
-while [ $v -le 10 ]
+# Display "Best School" 10 times
+v=0
+until [ $v -ge 10 ]
 do
 	echo "Best School"
-	v=$(( v + 1 ))
+	v=$((v + 1))
 done
