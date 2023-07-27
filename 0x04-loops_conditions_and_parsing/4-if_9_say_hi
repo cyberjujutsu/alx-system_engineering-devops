@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# Display "Best School" 10 time
-# display "Best School" and then "Hi"
-v=1
-while [ $v -le 10 ]
+# Script display "Best school" 10 time
+# say hi
+
+v=0
+
+while [ $v -lt 10 ]
 do
-	if [ $v = 10 ]
-	then
-		echo "Hi"
-	fi
-	echo "Best School"
-	v=$(( v + 1 ))
+  if [ $v -eq 9 ]
+  then
+    echo "Hi"
+  fi
+  echo "Best School"
+  (( v++ ))
 done
