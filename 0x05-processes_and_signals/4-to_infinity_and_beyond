@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-# Don't stop now
-#you can't stop me
+# Displays indefinitely with
+#sleep 2 in between each iteration
 
-pgrep -f 4-to_infinity_and_beyond | xargs kill
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
