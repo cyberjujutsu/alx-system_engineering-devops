@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Display a list of currently run processes
+# Shows all processes for all users
+# which might not have a TTY
+
+ps -auxf
