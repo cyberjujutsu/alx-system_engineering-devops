@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# prints a string 10 times using while loop
+# Displays "Best School" 10 time using a while loop.
+#   On the 9 iteration, displays "Hi" before "Best School".
 
-v=1
+counter=0
 
-while [ "$v" -lt 11 ]; do
-  echo "Best School"
-  
-  # if statement to print Hi when v is 9
-  if [ "$v" -eq 9 ]; then
+while [ $counter -lt 10 ]
+do
+  if [ $counter -eq 9 ]
+  then
     echo "Hi"
   fi
-
-  ((v++))
+  echo "Best School"
+  (( counter++ ))
 done
