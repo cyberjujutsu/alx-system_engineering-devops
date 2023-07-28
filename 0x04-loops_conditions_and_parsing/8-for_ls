@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is display files in current dir without task number
+
+for f in *
+do
+	echo "${f/*-/}"
+done
