@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#  display the content of the file /etc/passwd
+#+ only displays
+
+while IFS= read -r LI; do
+    echo "$LI" | cut -d':' -f1,4,7
+done < /etc/passwd
