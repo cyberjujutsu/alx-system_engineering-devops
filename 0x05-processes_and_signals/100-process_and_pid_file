@@ -1,15 +1,42 @@
 #!/usr/bin/env bash
-# Creates the file /var/run/holbertonscript.pid containing it PID
-# Displays "To infinity and beyond" indefinitely
-# Displays "I hate the kill command" when receive a SIGTERM
-# Displays "Y U no love me?!" when receiving a igint signal
-# Deletes the file /var/run/holbertonscript.pid and terminate itself when receiving a SIGQUIT or SIGTERM signal
+# Manage the script manage_my_process
+#   When passed the arg `start`:
+#     1. Start manage_my_proces
+#     2. Creates a file containings its PID in /var/run/my_process.pid
+#     3. Displays "manage_my_process started"
+#   When passed the arg `stop`:
+#     1. Stops manage_my_process
+#     2. Deletes the file /var/run/my_process.pid
+#     3. Displays "manage_my_process stopped"
+#   When passed the arg `restart`:
+#     1. Stops manage_my_process
+#     2. Deletes the file /var/run/my_process.pid
+#     3. Starts manage_my_process
+#     4. Creates a file containing its PID in /var/run/my_process.pid
+#     5. Displays "manage_my_process restarted"
+#   If any other or no arg are passed, display
+#+  "Usage: manage_my_process {start|stop|restart}"
 
-echo "$$" > /var/run/holbertonscript.pid
-trap "echo 'I hate the kill command'; rm /var/run/holbertonscript.pid; exit" SIGTERM
-trap "rm /var/run/holbertonscript.pid; exit" SIGQUIT
-trap "echo 'Y U no love me?!'" SIGINT
-while true; do
-      echo "To infinity and beyond"
-      sleep 2
-done
+if [ "$1" == "start" ]
+then
+  ./manage_my_process &
+  echo $$ > /var/run/my_process.pid
+  echo "manage_my_process started"
+
+elif [ "$1" == "stop" ]
+then
+  kill "$(pgrep -f /manage_my_process)" 
+  rm /var/run/my_process.pid
+  echo "manage_my_process stopped"
+
+elif [ "$1" == "restart" ]
+then
+  kill "$(pgrep -f /manage_my_process)"
+  rm /var/run/my_process.pid
+  ./manage_my_process &
+  echo $$ > /var/run/my_process.pid
+  echo "manage_my_process restarted"
+
+else
+  echo "Usage: manage_my_process {start|stop|restart}"
+fi
