@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# Script display "Best school" 10 time
-# say hi
+# prints a string 10 times using while loop
 
-v=0
+v=1
 
-while [ $v -lt 10 ]
-do
-  if [ $v -eq 9 ]
-  then
+while [ "$v" -lt 11 ]; do
+  echo "Best School"
+  
+  # if statement to print Hi when v is 9
+  if [ "$v" -eq 9 ]; then
     echo "Hi"
   fi
-  echo "Best School"
-  (( v++ ))
+
+  ((v++))
 done
