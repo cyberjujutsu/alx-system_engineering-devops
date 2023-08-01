@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# This script kill the processing
-kill -9 "$(pgrep -f highlander)"
