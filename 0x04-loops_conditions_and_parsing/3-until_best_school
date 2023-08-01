@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# Display "Best School" 10 times
-v=0
-until [ $v -ge 10 ]
-do
-	echo "Best School"
-	v=$((v + 1))
-done
